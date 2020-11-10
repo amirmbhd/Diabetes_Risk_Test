@@ -44,7 +44,7 @@ def main():
     choice = st.sidebar.selectbox ("Menu", menu)
     if choice == "Home":
         st.subheader("Home")
-        st.text( "What is Diabetes?")
+        st.text( "Welcome to the Future")
     elif choice == "Login" :
         username = st.sidebar.text_input ("Username")
         password = st.sidebar.text_input ("password", type='password')
