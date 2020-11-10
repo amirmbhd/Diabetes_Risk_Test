@@ -58,7 +58,7 @@ def main():
                     activity = st.selectbox("Activity", submenu)
                     if activity == ( "Plot"):    
                         st.subheader("Data Visualization Plot")
-                        df = pd.read_csv("data/Diabetesdata.csv")
+                        df = pd.read_csv("Diabetesdata.csv")
                         st.dataframe(df)
                         
                         df['Total - Percentage'].value_counts().plot(kind='bar')
