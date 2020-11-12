@@ -50,7 +50,7 @@ def main():
     if choice == "Home":
         st.subheader("Home")
         st.text( "Welcome to the Future")
-	c_image ='vcu.jpg'
+        c_image = 'vcu.jpg'
         load_images(c_image)
     elif choice == "Login" :
         username = st.sidebar.text_input ("Username")
