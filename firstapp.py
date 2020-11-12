@@ -17,6 +17,8 @@ import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg')
 
+from PIL import Image
+
 import hashlib
 
 from managedb import *
@@ -31,6 +33,9 @@ def verify_hashes(password,hashed_text):
 		return hashed_text
 	return False
 
+def load_images(image_name):
+    img = Image.open(image_name)
+    return st.image(img, width=400)
 
 def main():
 
@@ -45,6 +50,8 @@ def main():
     if choice == "Home":
         st.subheader("Home")
         st.text( "Welcome to the Future")
+	c_image = 'vcu.jpg'
+        load_images(c_image)
     elif choice == "Login" :
         username = st.sidebar.text_input ("Username")
         password = st.sidebar.text_input ("password", type='password')
