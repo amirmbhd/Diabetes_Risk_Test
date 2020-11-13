@@ -101,8 +101,12 @@ def main():
                         
                     elif activity == "Prediction":
                             st.subheader("Predictive Analytics")
-			    age = st.number_input("Age",7,80)
+                            age = st.number_input("Age",7,80)
                             sex = st.radio("Sex",tuple(gender_dict.keys()))
+                            history = st.radio("Do you have a mother, father, sister, or brother with diabetes??",tuple(feature_dict.keys()))
+                            bp = st.radio("Have you ever been diagnosed with high blood pressure?",tuple(feature_dict.keys()))
+                            activity = st.radio("Are you physically active?",tuple(feature_dict.keys()))
+
         else:
     	        st.warning("Incorrect Username/Password, Please try again")
 
