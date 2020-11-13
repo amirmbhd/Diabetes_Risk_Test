@@ -23,6 +23,22 @@ import hashlib
 
 from managedb import *
 
+
+
+# Password 
+def generate_hashes(password):
+	return hashlib.sha256(str.encode(password)).hexdigest()
+
+
+def verify_hashes(password,hashed_text):
+	if generate_hashes(password) == hashed_text:
+		return hashed_text
+	return False
+
+def load_images(image_name):
+    img = Image.open(image_name)
+    return st.image(img, width=400)
+
 gender_dict = {"male":1,"female":2}
 feature_dict = {"No":1,"Yes":2}
 
@@ -44,19 +60,6 @@ def get_fvalue(val):
 			return value 
 
 
-# Password 
-def generate_hashes(password):
-	return hashlib.sha256(str.encode(password)).hexdigest()
-
-
-def verify_hashes(password,hashed_text):
-	if generate_hashes(password) == hashed_text:
-		return hashed_text
-	return False
-
-def load_images(image_name):
-    img = Image.open(image_name)
-    return st.image(img, width=400)
 
 def main():
 
