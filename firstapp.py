@@ -3,7 +3,7 @@
 """
 Created on Sun Oct 25 20:56:34 2020
 
-@author: amirmohammadbehdani
+@author: amir
 """
 
 import streamlit as st
