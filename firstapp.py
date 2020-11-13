@@ -46,18 +46,18 @@ feature_dict = {"No":1,"Yes":2}
 def get_value(val,my_dict):
 	for key,value in my_dict.items():
 		if val == key:
-			return value 
+		return value 
 
 def get_key(val,my_dict):
 	for key,value in my_dict.items():
 		if val == key:
-			return key
+		return key
 
 def get_fvalue(val):
 	feature_dict = {"No":1,"Yes":2}
 	for key,value in feature_dict.items():
 		if val == key:
-			return value 
+		return value 
 
 
 
