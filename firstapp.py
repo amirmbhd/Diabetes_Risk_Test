@@ -23,6 +23,27 @@ import hashlib
 
 from managedb import *
 
+gender_dict = {"male":1,"female":2}
+feature_dict = {"No":1,"Yes":2}
+
+
+def get_value(val,my_dict):
+	for key,value in my_dict.items():
+		if val == key:
+			return value 
+
+def get_key(val,my_dict):
+	for key,value in my_dict.items():
+		if val == key:
+			return key
+
+def get_fvalue(val):
+	feature_dict = {"No":1,"Yes":2}
+	for key,value in feature_dict.items():
+		if val == key:
+			return value 
+
+
 # Password 
 def generate_hashes(password):
 	return hashlib.sha256(str.encode(password)).hexdigest()
@@ -74,6 +95,9 @@ def main():
                         
                     elif activity == "Prediction":
                             st.subheader("Predictive Analytics")
+				
+			    age = st.number_input("Age",7,80)
+			    sex = st.radio("Sex",tuple(gender_dict.keys()))
         else:
     	        st.warning("Incorrect Username/Password, Please try again")
 
