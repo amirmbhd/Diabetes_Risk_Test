@@ -95,9 +95,8 @@ def main():
                         
                     elif activity == "Prediction":
                             st.subheader("Predictive Analytics")
-				
 			    age = st.number_input("Age",7,80)
-			    sex = st.radio("Sex",tuple(gender_dict.keys()))
+                            sex = st.radio("Sex",tuple(gender_dict.keys()))
         else:
     	        st.warning("Incorrect Username/Password, Please try again")
 
