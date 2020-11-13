@@ -17,13 +17,12 @@ import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg')
 
-from PIL import Image
-
 import hashlib
 
+from PIL import Image
+
+
 from managedb import *
-
-
 
 # Password 
 def generate_hashes(password):
@@ -38,9 +37,6 @@ def verify_hashes(password,hashed_text):
 def load_images(image_name):
     img = Image.open(image_name)
     return st.image(img, width=400)
-
-
-feature_names_best = ['age', 'sex']
 
 gender_dict = {"male":1,"female":2}
 feature_dict = {"No":1,"Yes":2}
@@ -92,7 +88,7 @@ def main():
                     activity = st.selectbox("Activity", submenu)
                     if activity == ( "Plot"):    
                         st.subheader("Data Visualization Plot")
-                        df = pd.read_csv("Diabetesdata.csv")
+                        df = pd.read_csv("data/Diabetesdata.csv")
                         st.dataframe(df)
                         
                         df['Total - Percentage'].value_counts().plot(kind='bar')
@@ -106,6 +102,8 @@ def main():
                             history = st.radio("Do you have a mother, father, sister, or brother with diabetes??",tuple(feature_dict.keys()))
                             bp = st.radio("Have you ever been diagnosed with high blood pressure?",tuple(feature_dict.keys()))
                             activity = st.radio("Are you physically active?",tuple(feature_dict.keys()))
+
+
 
         else:
     	        st.warning("Incorrect Username/Password, Please try again")
