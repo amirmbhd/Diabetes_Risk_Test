@@ -42,8 +42,6 @@ def get_fvalue(val):
 	for key,value in feature_dict.items():
 		if val == key:
 			return value 
-gender_dict = {"male":1,"female":2}
-feature_dict = {"No":1,"Yes":2}
 
 
 # Password 
