@@ -97,7 +97,7 @@ def main():
 			freq_df = pd.read_csv("data/diabetesdata.csv")
 			st.bar_chart(freq_df['count'])
                         
-			if st.checkbox("Area Chart"):
+		        if st.checkbox("Area Chart"):
 				all_columns = df.columns.to_list()
 				feat_choices = st.multiselect("Choose a Feature",all_columns)
 				new_df = df[feat_choices]
