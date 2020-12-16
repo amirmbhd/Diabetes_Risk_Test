@@ -125,7 +125,7 @@ def main():
                             Alopecia = st.radio("Do you have Alopecia?( patchy hair loss)",tuple(feature_dict.keys()))
                             Obesity = st.radio("Do you have Obesity based on your BMI?",tuple(feature_dict.keys()))
                             feature_list = [Age,get_value(Gender,gender_dict),get_fvalue(Polyuria),get_fvalue(Polydipsia),get_fvalue(Sudden_weight_loss),get_fvalue(Weakness),get_fvalue(Polyphagia),get_fvalue(Genital_thrush),get_fvalue(Visual_blurring),get_fvalue(Itching),get_fvalue(Irritability),get_fvalue(Delayed_healing),get_fvalue(Itching),get_fvalue(Irritability),get_fvalue(Delayed_healing),get_fvalue(Partial_paresis),get_fvalue(Muscle_stiffness),get_fvalue(Alopecia),get_fvalue(Obesity)]
-                            st.write(len(feature_list))					
+                            st.write(feature_list)				
                             pretty_result = {"Age":Age,"Gender":Gender,"Polyuria":Polyuria,"Polydipsia":Polydipsia,"Sudden_weight_loss":Sudden_weight_loss,"Weakness":Weakness,"Polyphagia":Polyphagia,"Genital_thrush":Genital_thrush,"visual_blurring":Visual_blurring,"Itching":Itching,"Irritability":Irritability,"Delayed_healing":Delayed_healing,"Partial_paresis":Partial_paresis,"Muscle_stiffness":Muscle_stiffness,"Alopecia":Alopecia,"Obesity":Obesity}
                             st.json(pretty_result)
                             single_sample = np.array(feature_list).reshape(1,-1)
