@@ -111,6 +111,7 @@ def main():
                             Age = st.number_input("Age",7,80)
                             Gender = st.radio("Gender",tuple(gender_dict.keys()))
                             Polyuria = st.radio("Do you have Polyuria?",tuple(feature_dict.keys()))
+                            Polydipsia = st.radio("Do you have Polydipsia?",tuple(feature_dict.keys()))
                             sudden_weight_loss = st.radio("Hve you recently had sudden weight loss?",tuple(feature_dict.keys()))
                             weakness = st.radio("Do you usually have muscle weakness?",tuple(feature_dict.keys()))
                             Polyphagia = st.radio("Have you recently experienced excessive hunger or increased appetite?",tuple(feature_dict.keys()))
@@ -123,9 +124,9 @@ def main():
                             muscle_stiffness = st.radio("Have you recently experienced muscle stiffness?",tuple(feature_dict.keys()))
                             Alopecia = st.radio("Do you have Alopecia?( patchy hair loss)",tuple(feature_dict.keys()))
                             Obesity = st.radio("Do you have Obesity based on your BMI?",tuple(feature_dict.keys()))
-                            feature_list = [Age,get_value(Gender,gender_dict),get_fvalue(Polyuria),get_fvalue(sudden_weight_loss),get_fvalue(weakness),get_fvalue(Polyphagia),get_fvalue(Genital_thrush),get_fvalue(visual_blurring),get_fvalue(Itching),get_fvalue(Irritability),get_fvalue(delayed_healing),get_fvalue(Itching),get_fvalue(Irritability),get_fvalue(delayed_healing),get_fvalue(partial_paresis),get_fvalue(muscle_stiffness),get_fvalue(Alopecia),get_fvalue(Obesity)]
+                            feature_list = [Age,get_value(Gender,gender_dict),get_fvalue(Polyuria),get_fvalue(Polydipsia),get_fvalue(sudden_weight_loss),get_fvalue(weakness),get_fvalue(Polyphagia),get_fvalue(Genital_thrush),get_fvalue(visual_blurring),get_fvalue(Itching),get_fvalue(Irritability),get_fvalue(delayed_healing),get_fvalue(Itching),get_fvalue(Irritability),get_fvalue(delayed_healing),get_fvalue(partial_paresis),get_fvalue(muscle_stiffness),get_fvalue(Alopecia),get_fvalue(Obesity)]
                             st.write(len(feature_list))					
-                            pretty_result = {"Age":Age,"Gender":Gender,"Polyuria":Polyuria,"sudden_weight_loss":sudden_weight_loss,"weakness":weakness,"Polyphagia":Polyphagia,"Genital_thrush":Genital_thrush,"visual_blurring":visual_blurring,"Itching":Itching,"Irritability":Irritability,"delayed_healing":delayed_healing,"partial_paresis":partial_paresis,"muscle_stiffness":muscle_stiffness,"Alopecia":Alopecia,"Obesity":Obesity}
+                            pretty_result = {"Age":Age,"Gender":Gender,"Polyuria":Polyuria,"Polydipsia":Polydipsia,"sudden_weight_loss":sudden_weight_loss,"weakness":weakness,"Polyphagia":Polyphagia,"Genital_thrush":Genital_thrush,"visual_blurring":visual_blurring,"Itching":Itching,"Irritability":Irritability,"delayed_healing":delayed_healing,"partial_paresis":partial_paresis,"muscle_stiffness":muscle_stiffness,"Alopecia":Alopecia,"Obesity":Obesity}
                             st.json(pretty_result)
                             single_sample = np.array(feature_list).reshape(1,-1)
                             model_choice = st.selectbox("Select Model",["LR","KNN","DecisionTree"])
