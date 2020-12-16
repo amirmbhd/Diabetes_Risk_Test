@@ -91,7 +91,7 @@ def main():
                         df = pd.read_csv("data/Diabetesdata.csv")
                         st.dataframe(df)
                         
-                        df['Total - Percentage'].value_counts().plot(kind='bar')
+                        df['class'].value_counts().plot(kind='bar')
                         st.pyplot()
                         
                         
