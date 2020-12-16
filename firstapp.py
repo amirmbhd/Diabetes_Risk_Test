@@ -64,7 +64,7 @@ def main():
 
 
     st.title('Diabetes Analysis App')
-    st.subheader('VCU School of Pharmacy')
+    st.subheader('Are you on path to Diabetes? Let\'s findout')
     
     menu = ["Home","Login","SignUp"]
     submenu = [ "Plot" , "Prediction", "Analytics" ]
