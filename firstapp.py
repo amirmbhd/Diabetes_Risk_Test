@@ -40,8 +40,8 @@ def load_images(image_name):
 
 feature_names_best = [ 'Age', 'Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss', 'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring','Itching', 'Irritability', 'delayed healing', 'partial paresis','muscle stiffness', 'Alopecia', 'Obesity']
 
-gender_dict = {"Male":1,"Female":2}
-feature_dict = {"No":1,"Yes":2}
+gender_dict = {"Male":1,"Female":0}
+feature_dict = {"Yes":1,"No":0}
 
 
 def get_value(val,my_dict):
