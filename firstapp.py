@@ -92,7 +92,7 @@ def main():
                         st.dataframe(df)
                         
                         df['class'].value_counts().plot(kind='bar')
-			st.pyplot()
+			 st.pyplot()
 			
 			freq_df = pd.read_csv("data/diabetesdata.csv")
 			st.bar_chart(freq_df['count'])
