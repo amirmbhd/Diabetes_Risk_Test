@@ -144,7 +144,7 @@ def main():
                                             prediction = loaded_model.predict(single_sample)
                                             pred_prob = loaded_model.predict_proba(single_sample)
                                     st.write(prediction)
-                                    if prediction == 0:
+                                    if prediction == 1:
                                         st.warning("Patient is not Diabetic")
                                         pred_probability_score = {"Negative":pred_prob[0][0]*100,"Positive":pred_prob[0][1]*100}
                                         st.subheader("Prediction Probability Score using {}".format(model_choice))
