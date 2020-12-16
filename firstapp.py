@@ -113,7 +113,8 @@ def main():
                             Polyuria = st.radio("Do you have Polyuria?",tuple(feature_dict.keys()))
                             sudden_weight_loss = st.radio("Hve you recently had sudden weight loss?",tuple(feature_dict.keys()))
                             weakness = st.radio("Do you usually have muscle weakness?",tuple(feature_dict.keys()))
-
+			    Polyphagia = st.radio("Have you recently experienced excessive hunger or increase appetite?",tuple(feature_dict.keys()))
+				
 
 
         else:
