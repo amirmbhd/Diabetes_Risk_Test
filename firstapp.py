@@ -36,7 +36,7 @@ def verify_hashes(password,hashed_text):
 
 def load_images(image_name):
     img = Image.open(image_name)
-    return st.image(img, width=400)
+    return st.image(img, width=800)
 
 gender_dict = {"male":1,"female":2}
 feature_dict = {"No":1,"Yes":2}
