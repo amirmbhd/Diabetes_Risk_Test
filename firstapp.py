@@ -113,8 +113,16 @@ def main():
                             Polyuria = st.radio("Do you have Polyuria?",tuple(feature_dict.keys()))
                             sudden_weight_loss = st.radio("Hve you recently had sudden weight loss?",tuple(feature_dict.keys()))
                             weakness = st.radio("Do you usually have muscle weakness?",tuple(feature_dict.keys()))
-                            Polyphagia = st.radio("Have you recently experienced excessive hunger or increase appetite?",tuple(feature_dict.keys()))
-
+                            Polyphagia = st.radio("Have you recently experienced excessive hunger or increased appetite?",tuple(feature_dict.keys()))
+                            Genital_thrush = st.radio("Do you have Genital thrush?",tuple(feature_dict.keys()))
+                            visual_blurring = st.radio("Have you recently experienced visual blurring?",tuple(feature_dict.keys()))
+                            Itching = st.radio("Have you recently experienced Unexplained Itching?",tuple(feature_dict.keys()))
+                            Irritability = st.radio("Have you recently experienced excessive Irritability?",tuple(feature_dict.keys()))
+                            delayed_healing = st.radio("Have you recently experienced delayed wound healing?",tuple(feature_dict.keys()))
+                            partial_paresis = st.radio("Have you recently experienced partial paresis?",tuple(feature_dict.keys()))
+                            muscle_stiffness = st.radio("Have you recently experienced muscle stiffness?",tuple(feature_dict.keys()))
+                            Alopecia = st.radio("Do you have Alopecia?( patchy hair loss)",tuple(feature_dict.keys()))
+                            Obesity = st.radio("Do you have Obesity based on your BMI?",tuple(feature_dict.keys()))
 
         else:
     	        st.warning("Incorrect Username/Password, Please try again")
