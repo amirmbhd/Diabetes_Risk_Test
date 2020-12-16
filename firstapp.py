@@ -89,10 +89,10 @@ def main():
                     if activity == ( "Plot"):    
                         st.subheader("Data Visualization Plot")
                         df = pd.read_csv("data/Diabetesdata.csv")
-                         st.dataframe(df)
+                        st.dataframe(df)
                         
                         df['Total - Percentage'].value_counts().plot(kind='bar')
-                         st.pyplot()
+                        st.pyplot()
                         
                         
                     elif activity == "Prediction":
