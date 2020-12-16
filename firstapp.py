@@ -126,8 +126,8 @@ def main():
                             feature_list = [Age,get_value(Sex,gender_dict),get_fvalue(Polyuria),get_fvalue(sudden_weight_loss),get_fvalue(weakness),get_fvalue(Polyphagia),get_fvalue(Genital_thrush),get_fvalue(visual_blurring),get_fvalue(Itching),get_fvalue(Irritability),get_fvalue(delayed_healing),get_fvalue(Itching),get_fvalue(Irritability),get_fvalue(delayed_healing),get_fvalue(partial_paresis),get_fvalue(muscle_stiffness),get_fvalue(Alopecia),get_fvalue(Obesity)]
                             st.write(len(feature_list))					
                             pretty_result = {"Age":Age,"Sex":Sex,"Polyuria":Polyuria,"sudden_weight_loss":sudden_weight_loss,"weakness":weakness,"Polyphagia":Polyphagia,"Genital_thrush":Genital_thrush,"visual_blurring":visual_blurring,"Itching":Itching,"Irritability":Irritability,"delayed_healing":delayed_healing,"partial_paresis":partial_paresis,"muscle_stiffness":muscle_stiffness,"Alopecia":Alopecia,"Obesity":Obesity}
-			    st.json(pretty_result)
-			    single_sample = np.array(feature_list).reshape(1,-1)
+                            st.json(pretty_result)
+                            single_sample = np.array(feature_list).reshape(1,-1)
 				
 							
 							
