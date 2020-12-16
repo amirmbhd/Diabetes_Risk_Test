@@ -38,7 +38,7 @@ def load_images(image_name):
     img = Image.open(image_name)
     return st.image(img, width=800)
 
-gender_dict = {"male":1,"female":2}
+gender_dict = {"Male":1,"Female":2}
 feature_dict = {"No":1,"Yes":2}
 
 
@@ -57,7 +57,9 @@ def get_fvalue(val):
 	for key,value in feature_dict.items():
 		if val == key:
 			return value 
-
+def load_model(model_file):
+	loaded_model = joblib.load(open(os.path.join(model_file),"rb"))
+	return loaded_model
 
 
 def main():
