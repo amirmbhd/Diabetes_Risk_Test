@@ -92,7 +92,7 @@ def main():
                          st.dataframe(df)
                         
                         df['Total - Percentage'].value_counts().plot(kind='bar')
-                        	st.pyplot()
+                         st.pyplot()
                         
                         
                     elif activity == "Prediction":
