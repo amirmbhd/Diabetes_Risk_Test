@@ -118,7 +118,6 @@ def main():
                             Genital_thrush = st.radio("Do you have Genital thrush?",tuple(feature_dict.keys()))
                             Visual_blurring = st.radio("Have you recently experienced visual blurring?",tuple(feature_dict.keys()))
                             Itching = st.radio("Have you recently experienced Unexplained Itching?",tuple(feature_dict.keys()))
-                            Irritability = st.radio("Have you recently experienced excessive Irritability?",tuple(feature_dict.keys()))
                             Delayed_healing = st.radio("Have you recently experienced delayed wound healing?",tuple(feature_dict.keys()))
                             Partial_paresis = st.radio("Have you recently experienced partial paresis?",tuple(feature_dict.keys()))
                             Muscle_stiffness = st.radio("Have you recently experienced muscle stiffness?",tuple(feature_dict.keys()))
