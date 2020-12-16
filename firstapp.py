@@ -111,7 +111,7 @@ def main():
                             Age = st.number_input("Age",7,80)
                             Sex = st.radio("Sex",tuple(gender_dict.keys()))
                             Polyuria = st.radio("Do you have Polyuria?",tuple(feature_dict.keys()))
-                            sudden weight loss = st.radio("Hve you recently had sudden weight loss?",tuple(feature_dict.keys()))
+                            sudden_weight_loss = st.radio("Hve you recently had sudden weight loss?",tuple(feature_dict.keys()))
                             weakness = st.radio("Do you usually have muscle weakness?",tuple(feature_dict.keys()))
 
 
