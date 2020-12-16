@@ -145,9 +145,17 @@ def main():
                                             pred_prob = loaded_model.predict_proba(single_sample)
                                     st.write(prediction)
                                     if prediction == 0:
-                                        st.warning(" Patient is not Diabetic ")
+                                        st.warning("Patient is not Diabetic")
+                                        pred_probability_score = {"Patient is not Diabetic":pred_prob[0][0]*100,"Live":pred_prob[0][1]*100}
+                                        st.subheader("Prediction Probability Score using {}".format(model_choice))
+                                        st.json(pred_probability_score)
+                                        st.subheader("Prescriptive Analytics")
+                                        st.markdown(prescriptive_message_temp,unsafe_allow_html=True)
                                     else:
                                         st.success(" Patient is Diabetic ")
+                                        pred_probability_score = {"Die":pred_prob[0][0]*100,"Live":pred_prob[0][1]*100}
+                                        st.subheader("Prediction Probability Score using {}".format(model_choice))
+                                        st.json(pred_probability_score)
                                         
 
 
