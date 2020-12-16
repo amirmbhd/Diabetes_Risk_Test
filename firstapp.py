@@ -90,12 +90,12 @@ def main():
                         st.subheader("Data Visualization Plot")
                         df = pd.read_csv("data/diabetesdata.csv")
                         st.dataframe(df)
-			if st.checkbox("Area Chart"):
-				all_columns df.columns.to_list()
-				feat_choices = st.multiselect("Choose a Feature",all_columns)
-				new_df = df[feat_choices]
-				st.area_chart(new_df)
-				
+				if st.checkbox("Area Chart"):
+					all_columns df.columns.to_list()
+					feat_choices = st.multiselect("Choose a Feature",all_columns)
+					new_df = df[feat_choices]
+					st.area_chart(new_df)
+
                         
 		
                         
