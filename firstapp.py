@@ -146,13 +146,13 @@ def main():
                                     st.write(prediction)
                                     if prediction == 0:
                                         st.warning("Patient is not Diabetic")
-                                        pred_probability_score = {"Patient is not Diabetic":pred_prob[0][0]*100,"Live":pred_prob[0][1]*100}
+                                        pred_probability_score = {"Negative":pred_prob[0][0]*100,"Positive":pred_prob[0][1]*100}
                                         st.subheader("Prediction Probability Score using {}".format(model_choice))
                                         st.json(pred_probability_score)
                                         
                                     else:
-                                        st.success(" Patient is Diabetic ")
-                                        pred_probability_score = {"Die":pred_prob[0][0]*100,"Live":pred_prob[0][1]*100}
+                                        st.success("Patient is Diabetic")
+                                        pred_probability_score = {"Negative":pred_prob[0][0]*100,"Positive":pred_prob[0][1]*100}
                                         st.subheader("Prediction Probability Score using {}".format(model_choice))
                                         st.json(pred_probability_score)
                                         
