@@ -144,10 +144,10 @@ def main():
                                             prediction = loaded_model.predict(single_sample)
                                             pred_prob = loaded_model.predict_proba(single_sample)
                                     st.write(prediction)
-                                    if prediction == 1:
-                                        st.warning(" Patient is Diabetic ")
+                                    if prediction == 0:
+                                        st.warning(" Patient is not Diabetic ")
                                     else:
-                                        st.success(" Patient is not Diabetic ")
+                                        st.success(" Patient is Diabetic ")
                                         
 
 
