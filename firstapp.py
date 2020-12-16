@@ -88,20 +88,12 @@ def main():
                     activity = st.selectbox("Activity", submenu)
                     if activity == ( "Plot"):    
                         st.subheader("Data Visualization Plot")
-                        df = pd.read_csv("data/diabetesdata.csv")
-                        st.dataframe(df)
+                        df = pd.read_csv("data/Diabetesdata.csv")
+                         st.dataframe(df)
                         
-                        df['class'].value_counts().plot(kind='bar')
-			 st.pyplot()
-			
-			freq_df = pd.read_csv("data/diabetesdata.csv")
-			st.bar_chart(freq_df['count'])
+                        df['Total - Percentage'].value_counts().plot(kind='bar')
+                        	st.pyplot()
                         
-		        if st.checkbox("Area Chart"):
-				all_columns = df.columns.to_list()
-				feat_choices = st.multiselect("Choose a Feature",all_columns)
-				new_df = df[feat_choices]
-				st.area_chart(new_df)
                         
                     elif activity == "Prediction":
                             st.subheader("Predictive Analytics")
