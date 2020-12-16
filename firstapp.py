@@ -73,7 +73,7 @@ def main():
     if choice == "Home":
         st.subheader("Home")
         st.text( "Are you on path to Diabetes? Let\'s findout")
-        c_image = 'diab.jpeg'
+        c_image = 'diab.png'
         load_images(c_image)
     elif choice == "Login" :
         username = st.sidebar.text_input ("Username")
