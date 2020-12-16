@@ -131,17 +131,17 @@ def main():
                             model_choice = st.selectbox("Select Model",["LR","KNN","DecisionTree"])
                             if st.button("Predict"):
                                     if model_choice == "KNN":
-                                    loaded_model = load_model("models/knn_hepB_model.pkl")
-                                    prediction = loaded_model.predict(single_sample)
-                                    pred_prob = loaded_model.predict_proba(single_sample)
-                            elif model_choice == "DecisionTree":
-                                    loaded_model = load_model("models/decision_tree_clf_hepB_model.pkl")
-                                    prediction = loaded_model.predict(single_sample)
-                                    pred_prob = loaded_model.predict_proba(single_sample)
-                            else:
-                                    loaded_model = load_model("models/logistic_regression_hepB_model.pkl")
-                                    prediction = loaded_model.predict(single_sample)
-                                    pred_prob = loaded_model.predict_proba(single_sample)
+					    loaded_model = load_model("models/knn_hepB_model.pkl")
+					    prediction = loaded_model.predict(single_sample)
+					    pred_prob = loaded_model.predict_proba(single_sample)
+				    elif model_choice == "DecisionTree":
+					    loaded_model = load_model("models/decision_tree_clf_hepB_model.pkl")
+					    prediction = loaded_model.predict(single_sample)
+					    pred_prob = loaded_model.predict_proba(single_sample)
+				    else:
+					    loaded_model = load_model("models/logistic_regression_hepB_model.pkl")
+					    prediction = loaded_model.predict(single_sample)
+					    pred_prob = loaded_model.predict_proba(single_sample)
 
 
 							
