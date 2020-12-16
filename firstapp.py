@@ -94,7 +94,7 @@ def main():
                         df['class'].value_counts().plot(kind='bar')
                         st.pyplot()
                         
-			if st.checkbox("Area Chart"):
+		    if st.checkbox("Area Chart"):
 				all_columns = df.columns.to_list()
 				feat_choices = st.multiselect("Choose a Feature",all_columns)
 				new_df = df[feat_choices]
