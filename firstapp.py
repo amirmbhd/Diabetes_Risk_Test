@@ -55,7 +55,7 @@ def get_key(val,my_dict):
 			return key
 
 def get_fvalue(val):
-	feature_dict = {"No":1,"Yes":2}
+	feature_dict = {"No":0,"Yes":1}
 	for key,value in feature_dict.items():
 		if val == key:
 			return value 
