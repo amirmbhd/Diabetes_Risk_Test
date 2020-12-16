@@ -38,7 +38,7 @@ def load_images(image_name):
     img = Image.open(image_name)
     return st.image(img, width=800)
 
-feature_names_best = [ 'Age', 'Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss', 'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring','Itching', 'Irritability', 'delayed healing', 'partial paresis','muscle stiffness', 'Alopecia', 'Obesity']
+feature_names_best = [ 'Age', 'Gender', 'Polyuria', 'Polydipsia', 'sudden_weight_loss', 'weakness', 'Polyphagia', 'Genital_thrush', 'visual_blurring','Itching', 'Irritability', 'delayed_healing', 'partial_paresis','muscle_stiffness', 'Alopecia', 'Obesity']
 
 gender_dict = {"Male":1,"Female":0}
 feature_dict = {"Yes":1,"No":0}
