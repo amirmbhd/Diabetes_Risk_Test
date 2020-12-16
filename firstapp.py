@@ -88,7 +88,7 @@ def main():
                     activity = st.selectbox("Activity", submenu)
                     if activity == ( "Plot"):    
                         st.subheader("Data Visualization Plot")
-                        df = pd.read_csv("data/Diabetesdata.csv")
+                        df = pd.read_csv("data/diabetesdata.csv")
                         st.dataframe(df)
                         
                         df['class'].value_counts().plot(kind='bar')
