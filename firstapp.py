@@ -128,8 +128,22 @@ def main():
                             pretty_result = {"Age":Age,"Sex":Sex,"Polyuria":Polyuria,"sudden_weight_loss":sudden_weight_loss,"weakness":weakness,"Polyphagia":Polyphagia,"Genital_thrush":Genital_thrush,"visual_blurring":visual_blurring,"Itching":Itching,"Irritability":Irritability,"delayed_healing":delayed_healing,"partial_paresis":partial_paresis,"muscle_stiffness":muscle_stiffness,"Alopecia":Alopecia,"Obesity":Obesity}
                             st.json(pretty_result)
                             single_sample = np.array(feature_list).reshape(1,-1)
-				
-							
+                            model_choice = st.selectbox("Select Model",["LR","KNN","DecisionTree"])
+                            if st.button("Predict"):
+                                    if model_choice == "KNN":
+                                    loaded_model = load_model("models/knn_hepB_model.pkl")
+                                    prediction = loaded_model.predict(single_sample)
+                                    pred_prob = loaded_model.predict_proba(single_sample)
+                            elif model_choice == "DecisionTree":
+                                    loaded_model = load_model("models/decision_tree_clf_hepB_model.pkl")
+                                    prediction = loaded_model.predict(single_sample)
+                                    pred_prob = loaded_model.predict_proba(single_sample)
+                            else:
+                                    loaded_model = load_model("models/logistic_regression_hepB_model.pkl")
+                                    prediction = loaded_model.predict(single_sample)
+                                    pred_prob = loaded_model.predict_proba(single_sample)
+
+
 							
 							
         else:
