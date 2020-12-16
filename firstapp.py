@@ -124,7 +124,7 @@ def main():
                             Alopecia = st.radio("Do you have Alopecia?( patchy hair loss)",tuple(feature_dict.keys()))
                             Obesity = st.radio("Do you have Obesity based on your BMI?",tuple(feature_dict.keys()))
                             feature_list = [Age,get_value(Sex,gender_dict),get_fvalue(Polyuria),get_fvalue(sudden_weight_loss),get_fvalue(weakness),get_fvalue(Polyphagia),get_fvalue(Genital_thrush),get_fvalue(visual_blurring),get_fvalue(Itching),get_fvalue(Irritability),get_fvalue(delayed_healing),get_fvalue(Itching),get_fvalue(Irritability),get_fvalue(delayed_healing),get_fvalue(partial_paresis),get_fvalue(muscle_stiffness),get_fvalue(Alopecia),get_fvalue(Obesity)]
-			
+			st.write(len(feature_list))			
 							
 							
 							
