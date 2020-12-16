@@ -64,7 +64,7 @@ def main():
 
 
     st.title('Diabetes Analysis App')
-    st.subheader('Are you on path to Diabetes? Let\'s findout')
+    st.subheader('Welcome to The Future')
     
     menu = ["Home","Login","SignUp"]
     submenu = [ "Plot" , "Prediction", "Analytics" ]
@@ -72,7 +72,7 @@ def main():
     choice = st.sidebar.selectbox ("Menu", menu)
     if choice == "Home":
         st.subheader("Home")
-        st.text( "Welcome to the Future")
+        st.text( "Are you on path to Diabetes? Let\'s findout")
         c_image = 'diab.jpeg'
         load_images(c_image)
     elif choice == "Login" :
