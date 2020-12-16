@@ -94,8 +94,8 @@ def main():
                         df['class'].value_counts().plot(kind='bar')
                         st.pyplot()
                         
-			freq_df = pd.read_csv("data/diabetesdata.csv")
-                        st.bar_chart(freq_df['count'])
+				freq_df = pd.read_csv("data/diabetesdata.csv")
+				st.bar_chart(freq_df['count'])
 			
 			if st.checkbox("Area Chart"):
 				all_columns = df.columns.to_list()
