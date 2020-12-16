@@ -143,6 +143,12 @@ def main():
                                             loaded_model = load_model("models/logistic_regression_diabetes_model.pkl")
                                             prediction = loaded_model.predict(single_sample)
                                             pred_prob = loaded_model.predict_proba(single_sample)
+                                    st.write(prediction)
+                                    if prediction == 1:
+                                        st.warning(" Patient is Diabetic)
+                                    else:
+                                        st.success("patient is not Diabetic) 
+                                        
 
 
 							
