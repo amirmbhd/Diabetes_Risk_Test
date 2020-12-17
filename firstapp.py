@@ -171,7 +171,7 @@ def main():
                             else:
                                         loaded_model = load_model("models/logistic_regression_diabetes_model.pkl")
 
-                                        df = pd.read_csv("data/diabetesdata.csv")
+                                        df = pd.read_csv("data/diabetesdata_binary.csv")
                                         x = df[['Age','Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss', 'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring','Itching', 'Irritability', 'delayed healing', 'partial paresis','muscle stiffness', 'Alopecia', 'Obesity']]
                                         feature_names = ['Age','Gender', 'Polyuria', 'Polydipsia', 'Sudden_weight_loss', 'Weakness', 'Polyphagia', 'Genital thrush', 'Visual_blurring','Itching', 'Irritability', 'Delayed_healing', 'Partial_paresis','Muscle_stiffness', 'Alopecia', 'Obesity']
                                         class_names = ['Negative','Positive']
