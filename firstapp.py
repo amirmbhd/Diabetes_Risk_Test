@@ -150,13 +150,13 @@ def main():
 				
                                     if prediction == 0:
                                         st.warning("Patient is not Diabetic")
-                                        pred_probability_score = {"Negative":pred_prob[0][0]*100,"Positive":pred_prob[0][1]*100}
+                                        pred_probability_score = {"Not Diabetic":pred_prob[0][0]*100,"Diabetic":pred_prob[0][1]*100}
                                         st.subheader("Prediction Probability Score using {}".format(model_choice))
                                         st.json(pred_probability_score)
                                         
                                     else:
                                         st.success("Patient is Diabetic")
-                                        pred_probability_score = {"Negative":pred_prob[0][0]*100,"Positive":pred_prob[0][1]*100}
+                                        pred_probability_score = {"Not Diabetic":pred_prob[0][0]*100,"Diabetic":pred_prob[0][1]*100}
                                         st.subheader("Prediction Probability Score using {}".format(model_choice))
                                         st.json(pred_probability_score)                                  
                              
@@ -169,7 +169,6 @@ def main():
                             
                             else:
                                         loaded_model = load_model("models/logistic_regression_diabetes_model.pkl")
-
                                         df = pd.read_csv("data/diabetesdata_binary.csv")
                                         x = df[['Age','Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss', 'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring','Itching', 'Irritability', 'delayed healing', 'partial paresis','muscle stiffness', 'Alopecia', 'Obesity']]
                                         feature_names = ['Age','Gender', 'Polyuria', 'Polydipsia', 'Sudden_weight_loss', 'Weakness', 'Polyphagia', 'Genital thrush', 'Visual_blurring','Itching', 'Irritability', 'Delayed_healing', 'Partial_paresis','Muscle_stiffness', 'Alopecia', 'Obesity']
