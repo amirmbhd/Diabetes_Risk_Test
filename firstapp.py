@@ -180,14 +180,7 @@ def main():
                                         explainer = lime.lime_tabular.LimeTabularExplainer(x.values,feature_names=feature_names, class_names=class_names,discretize_continuous=True)
                                         exp = explainer.explain_instance(np.array(feature_list), loaded_model.predict_proba,num_features=16, top_labels=1)
                                         exp.show_in_notebook(show_table=True, show_all=False)
-                                        # st.write(label_limits)
-                                        label_scores = [i[1] for i in new_exp]
-                                        plt.barh(label_limits,label_scores)
-                                        st.pyplot()
-                                        plt.figure(figsize=(20,10))
-                                        fig = exp.as_pyplot_figure()
-                                        st.pyplot()	                                   					
-					
+
 					
 					
 					
