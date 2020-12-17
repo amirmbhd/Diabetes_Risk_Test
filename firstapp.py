@@ -166,6 +166,34 @@ def main():
                             
                             else:
                                         loaded_model = load_model("models/logistic_regression_diabetes_model.pkl")
+
+                                        df = pd.read_csv("data/clean_hepatitis_dataset.csv")
+                                        x = df[['Age', 'Gender', 'Polyuria', 'Polydipsia', 'Sudden_weight_loss', 'Weakness', 'Polyphagia', 'Genital_thrush', 'Visual_blurring','Itching', 'Irritability', 'Delayed_healing', 'Partial_paresis','Muscle_stiffness', 'Alopecia', 'Obesity']]
+                                        feature_names = ['Age', 'Gender', 'Polyuria', 'Polydipsia', 'Sudden_weight_loss', 'Weakness', 'Polyphagia', 'Genital_thrush', 'Visual_blurring','Itching', 'Irritability', 'Delayed_healing', 'Partial_paresis','Muscle_stiffness', 'Alopecia', 'Obesity']
+                                        class_names = ['Negative','Positive']
+                                        explainer = lime.lime_tabular.LimeTabularExplainer(x.values,feature_names=feature_names, class_names=class_names,discretize_continuous=True)
+                                        # The Explainer Instance
+                                        exp = explainer.explain_instance(np.array(feature_list), loaded_model.predict_proba,num_features=16, top_labels=1)
+                                        exp.show_in_notebook(show_table=True, show_all=False)
+                                        # exp.save_to_file('lime_oi.html')
+                                        st.write(exp.as_list())
+                                        new_exp = exp.as_list()
+                                        label_limits = [i[0] for i in new_exp]
+                                        # st.write(label_limits)
+                                        label_scores = [i[1] for i in new_exp]
+                                        plt.barh(label_limits,label_scores)
+                                        st.pyplot()
+                                        plt.figure(figsize=(20,10))
+                                        fig = exp.as_pyplot_figure()
+                                        st.pyplot()	
+			
+			
+					
+					
+					
+					
+					
+					
         else:
     	        st.warning("Incorrect Username/Password, Please try again")
 
