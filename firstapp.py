@@ -110,7 +110,7 @@ def main():
 				
                     elif activity == "Prediction":
                             st.subheader("Predictive Analytics")
-                            Age = float(st.number_input("Age",7,80))
+                            Age = float(st.number_input("age",7,80))
                             Gender = st.radio("Gender",tuple(gender_dict.keys()))
                             Polyuria = st.radio("Do you have Polyuria?",tuple(feature_dict.keys()))
                             Polydipsia = st.radio("Do you have Polydipsia?",tuple(feature_dict.keys()))
