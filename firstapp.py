@@ -157,7 +157,7 @@ def main():
                                         st.json(pred_probability_score)
                                         
 
-
+                             if st.checkbox("Interpret"):
 							
 							
         else:
