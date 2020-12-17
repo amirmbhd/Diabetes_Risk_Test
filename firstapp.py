@@ -155,19 +155,17 @@ def main():
                                         st.success("Patient is Diabetic")
                                         pred_probability_score = {"Negative":pred_prob[0][0]*100,"Positive":pred_prob[0][1]*100}
                                         st.subheader("Prediction Probability Score using {}".format(model_choice))
-                                        st.json(pred_probability_score)
-                                        
-
+                                        st.json(pred_probability_score)                                  
                              
-                        if st.checkbox("Interpret"):			
-                                if model_choice == "KNN":
+                            if st.checkbox("Interpret"):            
+                                    if model_choice == "KNN":
                                         loaded_model = load_model("models/knn_hepB_model.pkl")
-							
-                                        elif model_choice == "DecisionTree":
-							loaded_model = load_model("models/decision_tree_clf_hepB_model.pkl")
-							
-						else:
-							loaded_model = load_model("models/logistic_regression_hepB_model.pkl")		
+                            
+                                    elif model_choice == "DecisionTree":
+                                        loaded_model = load_model("models/decision_tree_clf_hepB_model.pkl")
+                            
+                            else:
+                                        loaded_model = load_model("models/logistic_regression_hepB_model.pkl")
         else:
     	        st.warning("Incorrect Username/Password, Please try again")
 
