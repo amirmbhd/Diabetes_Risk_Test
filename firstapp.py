@@ -94,7 +94,7 @@ def main():
                     activity = st.selectbox("Activity", submenu)
                     if activity == ( "Plot"):    
                         st.subheader("Data Visualization Plot")
-                        df = pd.read_csv("data/diabetesdata.csv")
+                        df = pd.read_csv("data/diabetesdata_binary.csv")
                         st.dataframe(df)
                         if st.checkbox("Area Chart"):
                             all_columns = df.columns.to_list()
