@@ -131,6 +131,7 @@ def main():
                             single_sample = np.array(feature_list).reshape(1,-1)
                             model_choice = st.selectbox("Select Model",["LR","KNN","DecisionTree"])
                             if st.button("Predict"):
+
                                     if model_choice == "KNN":
                                             loaded_model = load_model("models/knn_diabetes_model.pkl")
                                             prediction = loaded_model.predict(single_sample)
@@ -157,8 +158,8 @@ def main():
                                         st.json(pred_probability_score)
                                         
 
-                             if st.checkbox("Interpret"):
-							
+                             
+                            if st.checkbox("Interpret"):			
 							
         else:
     	        st.warning("Incorrect Username/Password, Please try again")
