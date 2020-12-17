@@ -94,10 +94,10 @@ def main():
                     activity = st.selectbox("Activity", submenu)
                     if activity == ( "Plot"):    
                         st.subheader("Data Visualization Plot")
-                        df1 = pd.read_csv("data/diabetesdata.csv")
-                        st.dataframe(df1)
+                        df = pd.read_csv("data/diabetesdata.csv")
+                        st.dataframe(df)
                         if st.checkbox("Area Chart"):
-                            all_columns = df1.columns.to_list()
+                            all_columns = df.columns.to_list()
                             feat_choices = st.multiselect("Choose a Feature",all_columns)
                             new_df = df[feat_choices]
                             st.area_chart(new_df)
@@ -169,12 +169,12 @@ def main():
                             
                             else:
                                         loaded_model = load_model("models/logistic_regression_diabetes_model.pkl")
-                                        df = pd.read_csv("data/diabetesdata_binary.csv")
-                                        x = df[['Age','Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss', 'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring','Itching', 'Irritability', 'delayed healing', 'partial paresis','muscle stiffness', 'Alopecia', 'Obesity']]
+                                        df1 = pd.read_csv("data/diabetesdata_binary.csv")
+                                        x = df1[['Age','Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss', 'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring','Itching', 'Irritability', 'delayed healing', 'partial paresis','muscle stiffness', 'Alopecia', 'Obesity']]
                                         feature_names = ['Age','Gender', 'Polyuria', 'Polydipsia', 'Sudden_weight_loss', 'Weakness', 'Polyphagia', 'Genital thrush', 'Visual_blurring','Itching', 'Irritability', 'Delayed_healing', 'Partial_paresis','Muscle_stiffness', 'Alopecia', 'Obesity']
                                         class_names = ['Negative','Positive']
                                         explainer = lime.lime_tabular.LimeTabularExplainer(x.values,feature_names=feature_names, class_names=class_names,discretize_continuous=True)
-                                        exp = explainer.explain_instance(np.array(feature_list), loaded_model.predict_proba,num_features=14, top_labels=1)
+                                        exp = explainer.explain_instance(np.array(feature_list), loaded_model.predict_proba,num_features=16, top_labels=1)
                                         exp.show_in_notebook(show_table=True, show_all=False)
                                         # exp.save_to_file('lime_oi.html')
                                         st.write(exp.as_list())
