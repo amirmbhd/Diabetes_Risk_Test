@@ -172,9 +172,9 @@ def main():
 
                                         df = pd.read_csv("data/diabetesdata.csv")
                                         x = df[['Age', 'Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss', 'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring','Itching', 'Irritability', 'delayed healing', 'partial paresis','muscle stiffness', 'Alopecia', 'Obesity']]
-                                        feature_names = ['Age', 'Gender', 'Polyuria', 'Polydipsia', 'Sudden_weight_loss', 'Weakness', 'Polyphagia', 'Genital thrush', 'Visual_blurring','Itching', 'Irritability', 'Delayed_healing', 'Partial_paresis','Muscle_stiffness', 'Alopecia', 'Obesity']
+                                        feature_names_best = ['Age', 'Gender', 'Polyuria', 'Polydipsia', 'Sudden_weight_loss', 'Weakness', 'Polyphagia', 'Genital thrush', 'Visual_blurring','Itching', 'Irritability', 'Delayed_healing', 'Partial_paresis','Muscle_stiffness', 'Alopecia', 'Obesity']
                                         class_names = ['Negative','Positive']
-                                        explainer = lime.lime_tabular.LimeTabularExplainer(x.values,feature_names=feature_names, class_names=class_names,discretize_continuous=True)
+                                        explainer = lime.lime_tabular.LimeTabularExplainer(x.values,feature_names=feature_names_best, class_names=class_names,discretize_continuous=True)
                                         # The Explainer Instance
                                         exp = explainer.explain_instance(np.array(feature_list), loaded_model.predict_proba,num_features=14, top_labels=1)
                                         exp.show_in_notebook(show_table=True, show_all=False)
