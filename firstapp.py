@@ -62,6 +62,8 @@ def get_fvalue(val):
 def load_model(model_file):
 	loaded_model = joblib.load(open(os.path.join(model_file),"rb"))
 	return loaded_model
+import lime
+import lime.lime_tabular
 
 
 def main():
