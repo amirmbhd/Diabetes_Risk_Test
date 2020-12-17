@@ -159,8 +159,15 @@ def main():
                                         
 
                              
-                            if st.checkbox("Interpret"):			
+                        if st.checkbox("Interpret"):			
+                                if model_choice == "KNN":
+                                        loaded_model = load_model("models/knn_hepB_model.pkl")
 							
+                                        elif model_choice == "DecisionTree":
+							loaded_model = load_model("models/decision_tree_clf_hepB_model.pkl")
+							
+						else:
+							loaded_model = load_model("models/logistic_regression_hepB_model.pkl")		
         else:
     	        st.warning("Incorrect Username/Password, Please try again")
 
