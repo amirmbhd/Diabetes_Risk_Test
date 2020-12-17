@@ -110,7 +110,7 @@ def main():
 				
                     elif activity == "Prediction":
                             st.subheader("Predictive Analytics")
-                            #Age = float(st.number_input("age",7,80))
+                            Age = float(st.number_input("age",7,80))
                             Gender = st.radio("Gender",tuple(gender_dict.keys()))
                             Polyuria = st.radio("Do you have Polyuria?",tuple(feature_dict.keys()))
                             Polydipsia = st.radio("Do you have Polydipsia?",tuple(feature_dict.keys()))
@@ -126,9 +126,9 @@ def main():
                             Muscle_stiffness = st.radio("Have you recently experienced muscle stiffness?",tuple(feature_dict.keys()))
                             Alopecia = st.radio("Do you have Alopecia?( patchy hair loss)",tuple(feature_dict.keys()))
                             Obesity = st.radio("Do you have Obesity based on your BMI?",tuple(feature_dict.keys()))                      
-                            feature_list = [get_value(Gender,gender_dict),get_fvalue(Polyuria),get_fvalue(Polydipsia),get_fvalue(Sudden_weight_loss),get_fvalue(Weakness),get_fvalue(Polyphagia),get_fvalue(Genital_thrush),get_fvalue(Visual_blurring),get_fvalue(Itching),get_fvalue(Irritability),get_fvalue(Delayed_healing),get_fvalue(Partial_paresis),get_fvalue(Muscle_stiffness),get_fvalue(Alopecia),get_fvalue(Obesity)]
+                            feature_list = [Age,get_value(Gender,gender_dict),get_fvalue(Polyuria),get_fvalue(Polydipsia),get_fvalue(Sudden_weight_loss),get_fvalue(Weakness),get_fvalue(Polyphagia),get_fvalue(Genital_thrush),get_fvalue(Visual_blurring),get_fvalue(Itching),get_fvalue(Irritability),get_fvalue(Delayed_healing),get_fvalue(Partial_paresis),get_fvalue(Muscle_stiffness),get_fvalue(Alopecia),get_fvalue(Obesity)]
                             st.write(len(feature_list))			
-                            pretty_result = {"Gender":Gender,"Polyuria":Polyuria,"Polydipsia":Polydipsia,"Sudden_weight_loss":Sudden_weight_loss,"Weakness":Weakness,"Polyphagia":Polyphagia,"Genital_thrush":Genital_thrush,"visual_blurring":Visual_blurring,"Itching":Itching,"Irritability":Irritability,"Delayed_healing":Delayed_healing,"Partial_paresis":Partial_paresis,"Muscle_stiffness":Muscle_stiffness,"Alopecia":Alopecia,"Obesity":Obesity}
+                            pretty_result = {"Age":Age,"Gender":Gender,"Polyuria":Polyuria,"Polydipsia":Polydipsia,"Sudden_weight_loss":Sudden_weight_loss,"Weakness":Weakness,"Polyphagia":Polyphagia,"Genital_thrush":Genital_thrush,"visual_blurring":Visual_blurring,"Itching":Itching,"Irritability":Irritability,"Delayed_healing":Delayed_healing,"Partial_paresis":Partial_paresis,"Muscle_stiffness":Muscle_stiffness,"Alopecia":Alopecia,"Obesity":Obesity}
                             st.json(pretty_result)
                             single_sample = np.array(feature_list).reshape(1,-1)
                             model_choice = st.selectbox("Select Model",["LR","KNN","DecisionTree"])
@@ -171,8 +171,8 @@ def main():
                                         loaded_model = load_model("models/logistic_regression_diabetes_model.pkl")
 
                                         df = pd.read_csv("data/diabetesdata.csv")
-                                        x = df[[ 'Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss', 'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring','Itching', 'Irritability', 'delayed healing', 'partial paresis','muscle stiffness', 'Alopecia', 'Obesity']]
-                                        feature_names = ['Gender', 'Polyuria', 'Polydipsia', 'Sudden_weight_loss', 'Weakness', 'Polyphagia', 'Genital thrush', 'Visual_blurring','Itching', 'Irritability', 'Delayed_healing', 'Partial_paresis','Muscle_stiffness', 'Alopecia', 'Obesity']
+                                        x = df[['Age','Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss', 'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring','Itching', 'Irritability', 'delayed healing', 'partial paresis','muscle stiffness', 'Alopecia', 'Obesity']]
+                                        feature_names = ['Age','Gender', 'Polyuria', 'Polydipsia', 'Sudden_weight_loss', 'Weakness', 'Polyphagia', 'Genital thrush', 'Visual_blurring','Itching', 'Irritability', 'Delayed_healing', 'Partial_paresis','Muscle_stiffness', 'Alopecia', 'Obesity']
                                         class_names = ['Negative','Positive']
                                         explainer = lime.lime_tabular.LimeTabularExplainer(x.values,feature_names=feature_names, class_names=class_names,discretize_continuous=True)
                                         exp = explainer.explain_instance(np.array(feature_list), loaded_model.predict_proba,num_features=14, top_labels=1)
