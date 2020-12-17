@@ -167,8 +167,9 @@ def main():
                                     elif model_choice == "DecisionTree":
                                         loaded_model = load_model("models/decision_tree_clf_diabetes_model.pkl")
                             
-                            else:
+                                    else:
                                         loaded_model = load_model("models/logistic_regression_diabetes_model.pkl")
+					
                                         df1 = pd.read_csv("data/diabetesdata_binary.csv")
                                         x = df1[['Age','Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss', 'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring','Itching', 'Irritability', 'delayed healing', 'partial paresis','muscle stiffness', 'Alopecia', 'Obesity']]
                                         feature_names = ['Age','Gender', 'Polyuria', 'Polydipsia', 'Sudden_weight_loss', 'Weakness', 'Polyphagia', 'Genital thrush', 'Visual_blurring','Itching', 'Irritability', 'Delayed_healing', 'Partial_paresis','Muscle_stiffness', 'Alopecia', 'Obesity']
