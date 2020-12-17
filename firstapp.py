@@ -168,7 +168,7 @@ def main():
                                         loaded_model = load_model("models/logistic_regression_diabetes_model.pkl")
 
                                         df = pd.read_csv("data/diabetesdata.csv")
-                                        x = df[['Age', 'Gender', 'Polyuria', 'Polydipsia', 'Sudden_weight_loss', 'Weakness', 'Polyphagia', 'Genital_thrush', 'Visual_blurring','Itching', 'Irritability', 'Delayed_healing', 'Partial_paresis','Muscle_stiffness', 'Alopecia', 'Obesity']]
+                                        x = df[['Age', 'Gender', 'Polyuria', 'Polydipsia', 'Sudden weight loss', 'Weakness', 'Polyphagia', 'Genital_thrush', 'Visual_blurring','Itching', 'Irritability', 'Delayed_healing', 'Partial_paresis','Muscle_stiffness', 'Alopecia', 'Obesity']]
                                         feature_names = ['Age', 'Gender', 'Polyuria', 'Polydipsia', 'Sudden weight loss', 'Weakness', 'Polyphagia', 'Genital_thrush', 'Visual_blurring','Itching', 'Irritability', 'Delayed_healing', 'Partial_paresis','Muscle_stiffness', 'Alopecia', 'Obesity']
                                         class_names = ['Negative','Positive']
                                         explainer = lime.lime_tabular.LimeTabularExplainer(x.values,feature_names=feature_names, class_names=class_names,discretize_continuous=True)
